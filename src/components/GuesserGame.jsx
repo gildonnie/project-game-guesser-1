@@ -1,11 +1,22 @@
 import React, { useState } from 'react';
 import data from './data';
-import Audio from './audio/regheartbeat.mp3';
-import { Howl } from "howler";
 
+
+const regheartbeat = require("./audio/regheartbeat.mp3");
+const fastheartbeat = require("./audio/fastheartbeat.mp3");
+const flatline = require("./audio/flatline.mp3");
+
+
+document.addEventListener('click', musicPlay);
+function musicPlay() {
+    document.getElementById('audio').play();
+    document.removeEventListener('click', musicPlay);
+}
 
 const randNum = Math.floor( (Math.random() * 10) + 1 ); 
 console.log(randNum)
+
+
 const numObjs = [
     {
         value: 1,
@@ -87,7 +98,33 @@ const GuesserGame = () => {
             return item
         })
         
-      setNums(updateNums)
+        setNums(updateNums)
+
+        if (guesses < 3) {
+            document.addEventListener('click', musicPause);
+
+            function musicPause() {
+            document.getElementById('audio').pause();
+            document.removeEventListener('click', musicPlay);
+            }
+
+            document.addEventListener('click', musicPla);
+            
+            function musicPla() {
+            document.getElementById('audio2').play();
+            document.removeEventListener('click', musicPlay);
+            }
+        }
+        if (guesses < 2) {
+           
+            document.addEventListener('click', musicPl);
+            
+            function musicPl() {
+            document.getElementById('audio3').play();
+            document.removeEventListener('click', musicPlay);
+            }
+        }
+      
     };
     
 
@@ -102,17 +139,30 @@ const GuesserGame = () => {
     {hide?<section>
         {nums.map(item => (
             <button key={item.value} type="button" disabled={item.disable} onClick={() => countDn(item.value)}>{item.value}</button>
-            
+           
         ))}
+
+            <audio id="audio" autoplay  >
+                 <source src={regheartbeat} type="audio/mp3"/>
+                 
+
+            </audio>
+
+            <audio id="audio2" autoplay >
+                <source src={fastheartbeat} type="audio/mp3"/>
+            </audio>
 
     </section>:null}
 
     {show2?<section id="correct">
-        <h1>Your survived... this time...</h1>
+        <h1>You survived... this time...</h1>
     </section>:null}
     
     {show?<section id="wrong">
         <h1>you have died!</h1>
+        <audio id="audio3" autoplay >
+                <source src={flatline} type="audio/mp3"/>
+            </audio>
     </section>:null}
     
     </>
