@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/project-game-guesser-1/static/css/main.43d198d9.css",
+    "main.js": "/project-game-guesser-1/static/js/main.a5f9eb0a.js",
+    "static/media/flatline.mp3": "/project-game-guesser-1/static/media/flatline.f18f2c5aeb23e444cc3f.mp3",
+    "static/media/fastheartbeat.mp3": "/project-game-guesser-1/static/media/fastheartbeat.ecb433bdb83792fc7a67.mp3",
+    "static/media/regheartbeat.mp3": "/project-game-guesser-1/static/media/regheartbeat.10c20dcbcb8d3ca99d61.mp3",
+    "index.html": "/project-game-guesser-1/index.html",
+    "main.43d198d9.css.map": "/project-game-guesser-1/static/css/main.43d198d9.css.map",
+    "main.a5f9eb0a.js.map": "/project-game-guesser-1/static/js/main.a5f9eb0a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.43d198d9.css",
+    "static/js/main.a5f9eb0a.js"
+  ]
+}
