@@ -142,13 +142,13 @@ const GuesserGame = () => {
            
         ))}
 
-            <audio id="audio" autoplay  >
+            <audio id="audio" autoplay  loop>
                  <source src={regheartbeat} type="audio/mp3"/>
                  
 
             </audio>
 
-            <audio id="audio2" autoplay >
+            <audio id="audio2" autoplay loop>
                 <source src={fastheartbeat} type="audio/mp3"/>
             </audio>
 
