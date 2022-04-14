@@ -85,11 +85,11 @@ const GuesserGame = () => {
             setHide(false)
             setShow2(true)
 
-            document.addEventListener('click', musicPl);
+            document.addEventListener('click', musicPly);
             
-            function musicPl() {
+            function musicPly() {
             document.getElementById('audio3').pause();
-            document.removeEventListener('click', musicPl);
+            document.removeEventListener('click', musicPly);
             }
 
             document.addEventListener('click', musicP);
