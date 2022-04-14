@@ -85,18 +85,18 @@ const GuesserGame = () => {
             setHide(false)
             setShow2(true)
 
-            document.addEventListener('click', musicPly);
+            document.addEventListener('click', musicPause);
             
-            function musicPly() {
+            function musicPause() {
             document.getElementById('audio3').pause();
-            document.removeEventListener('click', musicPly);
+            document.removeEventListener('click', musicPause);
             }
 
-            document.addEventListener('click', musicP);
+            document.addEventListener('click', musicPlay);
             
-            function musicP() {
+            function musicPlay() {
             document.getElementById('audio4').play();
-            document.removeEventListener('click', musicP);
+            document.removeEventListener('click', musicPlay);
             }
         }
         if (guesses === 1) {
@@ -122,20 +122,20 @@ const GuesserGame = () => {
             document.removeEventListener('click', musicPause);
             }
 
-            document.addEventListener('click', musicPla);
+            document.addEventListener('click', musicPlay);
             
-            function musicPla() {
+            function musicPlay() {
             document.getElementById('audio2').play();
-            document.removeEventListener('click', musicPla);
+            document.removeEventListener('click', musicPlay);
             }
         }
         if (guesses < 2) {
            
-            document.addEventListener('click', musicPl);
+            document.addEventListener('click', musicPlay);
             
-            function musicPl() {
+            function musicPlay() {
             document.getElementById('audio3').play();
-            document.removeEventListener('click', musicPl);
+            document.removeEventListener('click', musicPlay);
             }
         }
       
@@ -157,13 +157,13 @@ const GuesserGame = () => {
            
         ))}
 
-            <audio id="audio" loop>
+            <audio autoPlay id="audio" loop>
                  <source src={regheartbeat} type="audio/mp3"/>
                  
 
             </audio>
 
-            <audio id="audio2" loop>
+            <audio autoPlay id="audio2" loop>
                 <source src={fastheartbeat} type="audio/mp3"/>
             </audio>
 
@@ -171,7 +171,7 @@ const GuesserGame = () => {
 
     {show2?<section id="correct">
         <h1>You survived... this time...</h1>
-        <audio id="audio4">
+        <audio autoPlay id="audio4">
                 <source src={scarylaugh} type="audio/mp3"/>
         </audio>
     </section>:null}
@@ -181,7 +181,7 @@ const GuesserGame = () => {
     {show?<section id="wrong" >
         <h1>you have died!</h1>
         
-        <audio id="audio3">
+        <audio autoPlay id="audio3">
                 <source src={flatline} type="audio/mp3"/>
             </audio>
     </section>:null}
