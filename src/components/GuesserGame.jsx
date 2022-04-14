@@ -6,7 +6,9 @@ import React, { useState } from 'react';
 const regheartbeat = require("./audio/regheartbeat.mp3");
 const fastheartbeat = require("./audio/fastheartbeat.mp3");
 const flatline = require("./audio/flatline.mp3");
-const scarylaugh = require("./audio/scarylaugh.mp3");
+const scarylaugh2 = require("./audio/scarylaugh2.mp3");
+
+
 
 
 document.addEventListener('click', musicPlay);
@@ -82,15 +84,18 @@ const GuesserGame = () => {
             
         }
         if (randNum === guess) {
-            setHide(false)
-            setShow2(true)
+            setHide(false);
+            setShow2(true);
+            setShow(false);
 
             
         }
         if (guesses === 1) {
         
-        setHide(false)
-        setShow(true)
+        setHide(false);
+        setShow(true);
+        setShow2(false);
+        
         
         };
         const updateNums = nums.map(item => {
@@ -106,42 +111,35 @@ const GuesserGame = () => {
             document.addEventListener('click', musicPause);
 
             function musicPause() {
-            document.getElementById('audio').pause();
-            document.removeEventListener('click', musicPause);
+                document.getElementById("audio").pause();
+                document.removeEventListener('click', musicPause);
             }
 
             document.addEventListener('click', musicPlay);
             
             function musicPlay() {
-            document.getElementById('audio2').play();
-            document.removeEventListener('click', musicPlay);
+                document.getElementById("audio2").play();
+                document.removeEventListener('click', musicPlay);
             }
         }
-        // if (show === true) {
+        if (guesses === 1) {
            
-        //     document.addEventListener('click', musicPlay);
-            
-        //     function musicPlay() {
-        //     document.getElementById('audio3').play();
-        //     document.removeEventListener('click', musicPlay);
-        //     }
-        // }
+            document.addEventListener('click', musicPause);
 
-        // if (show2 === true) {
-        //     document.addEventListener('click', musicPause);
-            
-        //     function musicPause() {
-        //     document.getElementById('audio3').pause();
-        //     document.removeEventListener('click', musicPause);
-        //     }
+            function musicPause() {
+                document.getElementById("audio2").pause();
+                document.removeEventListener('click', musicPause);
+            }
+        }
 
-        //     document.addEventListener('click', musicPlay);
-            
-        //     function musicPlay() {
-        //     document.getElementById('audio4').play();
-        //     document.removeEventListener('click', musicPlay);
-        //     }
-        // }
+        if (randNum === guesses) {
+            document.addEventListener('click', musicPause);
+
+            function musicPause() {
+                document.getElementById("audio2").pause();
+                document.removeEventListener('click', musicPause);
+            }
+        }
       
     };
     
@@ -154,14 +152,7 @@ const GuesserGame = () => {
         <h2>guess the correct number to survive</h2>
         <p>You have 3 lives: {guesses}/3</p>
     </header>:null}
-    
-    {hide?<section>
-        {nums.map(item => (
-            <button key={item.value} type="button" disabled={item.disable} onClick={() => countDn(item.value)}>{item.value}</button>
-           
-        ))}
-
-            <audio autoPlay id="audio" loop>
+    <audio autoPlay id="audio" loop>
                  <source src={regheartbeat} type="audio/mp3"/>
                  
 
@@ -170,13 +161,20 @@ const GuesserGame = () => {
             <audio autoPlay id="audio2" loop>
                 <source src={fastheartbeat} type="audio/mp3"/>
             </audio>
+    {hide?<section>
+        {nums.map(item => (
+            <button key={item.value} type="button" disabled={item.disable} onClick={() => countDn(item.value)}>{item.value}</button>
+           
+        ))}
+
+           
 
     </section>:null}
 
     {show2?<section id="correct">
         <h1>You survived... this time...</h1>
-        <audio autoPlay id="audio4">
-                <source src={scarylaugh} type="audio/mp3"/>
+        <audio autoPlay id="audio5">
+                <source src={scarylaugh2} type="audio/mp3"/>
         </audio>
     </section>:null}
     
