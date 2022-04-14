@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import data from './data';
+
+
 
 
 const regheartbeat = require("./audio/regheartbeat.mp3");
 const fastheartbeat = require("./audio/fastheartbeat.mp3");
 const flatline = require("./audio/flatline.mp3");
+const scarylaugh = require("./audio/scarylaugh.mp3");
 
 
 document.addEventListener('click', musicPlay);
@@ -69,9 +71,7 @@ const GuesserGame = () => {
     const [show2, setShow2] = useState(false);
     const [nums, setNums] = useState(numObjs)
     
-    // const DisableAfterClick = () => {
-    //     setDisable(true)
-    // };
+
 
    
 
@@ -84,6 +84,20 @@ const GuesserGame = () => {
         if (randNum === guess) {
             setHide(false)
             setShow2(true)
+
+            document.addEventListener('click', musicPl);
+            
+            function musicPl() {
+            document.getElementById('audio3').pause();
+            document.removeEventListener('click', musicPl);
+            }
+
+            document.addEventListener('click', musicP);
+            
+            function musicP() {
+            document.getElementById('audio4').play();
+            document.removeEventListener('click', musicP);
+            }
         }
         if (guesses === 1) {
         
@@ -105,14 +119,14 @@ const GuesserGame = () => {
 
             function musicPause() {
             document.getElementById('audio').pause();
-            document.removeEventListener('click', musicPlay);
+            document.removeEventListener('click', musicPause);
             }
 
             document.addEventListener('click', musicPla);
             
             function musicPla() {
             document.getElementById('audio2').play();
-            document.removeEventListener('click', musicPlay);
+            document.removeEventListener('click', musicPla);
             }
         }
         if (guesses < 2) {
@@ -121,7 +135,7 @@ const GuesserGame = () => {
             
             function musicPl() {
             document.getElementById('audio3').play();
-            document.removeEventListener('click', musicPlay);
+            document.removeEventListener('click', musicPl);
             }
         }
       
@@ -130,6 +144,7 @@ const GuesserGame = () => {
 
     return (
     <>
+    
     {hide?<header>
         <h1>Welcome to number guesser</h1>
         <h2>guess the correct number to survive</h2>
@@ -142,13 +157,13 @@ const GuesserGame = () => {
            
         ))}
 
-            <audio id="audio" autoplay  loop>
+            <audio id="audio" loop>
                  <source src={regheartbeat} type="audio/mp3"/>
                  
 
             </audio>
 
-            <audio id="audio2" autoplay loop>
+            <audio id="audio2" loop>
                 <source src={fastheartbeat} type="audio/mp3"/>
             </audio>
 
@@ -156,11 +171,17 @@ const GuesserGame = () => {
 
     {show2?<section id="correct">
         <h1>You survived... this time...</h1>
+        <audio id="audio4">
+                <source src={scarylaugh} type="audio/mp3"/>
+        </audio>
     </section>:null}
     
-    {show?<section id="wrong">
+
+    
+    {show?<section id="wrong" >
         <h1>you have died!</h1>
-        <audio id="audio3" autoplay >
+        
+        <audio id="audio3">
                 <source src={flatline} type="audio/mp3"/>
             </audio>
     </section>:null}
