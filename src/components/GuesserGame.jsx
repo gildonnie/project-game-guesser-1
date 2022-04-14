@@ -85,19 +85,7 @@ const GuesserGame = () => {
             setHide(false)
             setShow2(true)
 
-            document.addEventListener('click', musicPause);
             
-            function musicPause() {
-            document.getElementById('audio3').pause();
-            document.removeEventListener('click', musicPause);
-            }
-
-            document.addEventListener('click', musicPlay);
-            
-            function musicPlay() {
-            document.getElementById('audio4').play();
-            document.removeEventListener('click', musicPlay);
-            }
         }
         if (guesses === 1) {
         
@@ -129,15 +117,31 @@ const GuesserGame = () => {
             document.removeEventListener('click', musicPlay);
             }
         }
-        if (guesses < 2) {
+        // if (show === true) {
            
-            document.addEventListener('click', musicPlay);
+        //     document.addEventListener('click', musicPlay);
             
-            function musicPlay() {
-            document.getElementById('audio3').play();
-            document.removeEventListener('click', musicPlay);
-            }
-        }
+        //     function musicPlay() {
+        //     document.getElementById('audio3').play();
+        //     document.removeEventListener('click', musicPlay);
+        //     }
+        // }
+
+        // if (show2 === true) {
+        //     document.addEventListener('click', musicPause);
+            
+        //     function musicPause() {
+        //     document.getElementById('audio3').pause();
+        //     document.removeEventListener('click', musicPause);
+        //     }
+
+        //     document.addEventListener('click', musicPlay);
+            
+        //     function musicPlay() {
+        //     document.getElementById('audio4').play();
+        //     document.removeEventListener('click', musicPlay);
+        //     }
+        // }
       
     };
     
