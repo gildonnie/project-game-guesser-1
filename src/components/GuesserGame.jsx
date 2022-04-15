@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 
 
-// const regheartbeat = require("./audio/regheartbeat.mp3");
+
 const fastheartbeat = require("./audio/fastheartbeat.mp3");
 const flatline = require("./audio/flatline.mp3");
 const scarylaugh2 = require("./audio/scarylaugh2.mp3");
@@ -11,11 +11,6 @@ const scarylaugh2 = require("./audio/scarylaugh2.mp3");
 
 
 
-// document.addEventListener('click', musicPlay);
-// function musicPlay() {
-//     document.getElementById('audio').play();
-//     document.removeEventListener('click', musicPlay);
-// }
 
 
 document.addEventListener('click', musicPla);
@@ -117,22 +112,7 @@ const GuesserGame = () => {
         
         setNums(updateNums)
 
-        // if (guesses < 3) {
-        //     document.addEventListener('click', musicPause);
-
-        //     function musicPause() {
-        //         document.getElementById("audio").pause();
-        //         document.removeEventListener('click', musicPause);
-        //     }
-
-        //     document.addEventListener('click', musicPlay);
-            
-        //     function musicPlay() {
-        //         document.getElementById("audio2").play();
-        //         document.removeEventListener('click', musicPlay);
-        //     }
-        // }
-      
+        
 
       
       
@@ -154,10 +134,6 @@ const GuesserGame = () => {
             <button key={item.value} type="button" disabled={item.disable} onClick={() => countDn(item.value)}>{item.value}</button>
 
         ))}
-        
-            {/* <audio autoPlay id="audio" key="audio" loop>
-                 <source src={regheartbeat} type="audio/mp3"/>
-            </audio> */}
 
             <audio autoPlay id="audio2" key="audio2" loop>
                 <source src={fastheartbeat} type="audio/mp3"/>
