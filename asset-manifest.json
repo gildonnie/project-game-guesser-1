@@ -1,16 +1,16 @@
 {
-  "files": {
-    "main.css": "/project-game-guesser-1/static/css/main.43d198d9.css",
-    "main.js": "/project-game-guesser-1/static/js/main.a5f9eb0a.js",
-    "static/media/flatline.mp3": "/project-game-guesser-1/static/media/flatline.f18f2c5aeb23e444cc3f.mp3",
-    "static/media/fastheartbeat.mp3": "/project-game-guesser-1/static/media/fastheartbeat.ecb433bdb83792fc7a67.mp3",
-    "static/media/regheartbeat.mp3": "/project-game-guesser-1/static/media/regheartbeat.10c20dcbcb8d3ca99d61.mp3",
-    "index.html": "/project-game-guesser-1/index.html",
-    "main.43d198d9.css.map": "/project-game-guesser-1/static/css/main.43d198d9.css.map",
-    "main.a5f9eb0a.js.map": "/project-game-guesser-1/static/js/main.a5f9eb0a.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.43d198d9.css",
-    "static/js/main.a5f9eb0a.js"
-  ]
+  "main.css": "/project-game-guesser-1/static/css/main.708a12dd.chunk.css",
+  "main.js": "/project-game-guesser-1/static/js/main.6602956b.chunk.js",
+  "main.js.map": "/project-game-guesser-1/static/js/main.6602956b.chunk.js.map",
+  "static/js/1.99ef2e7b.chunk.js": "/project-game-guesser-1/static/js/1.99ef2e7b.chunk.js",
+  "static/js/1.99ef2e7b.chunk.js.map": "/project-game-guesser-1/static/js/1.99ef2e7b.chunk.js.map",
+  "runtime~main.js": "/project-game-guesser-1/static/js/runtime~main.a5c71b18.js",
+  "runtime~main.js.map": "/project-game-guesser-1/static/js/runtime~main.a5c71b18.js.map",
+  "static/media/fastheartbeat.mp3": "/project-game-guesser-1/static/media/fastheartbeat.a134fd37.mp3",
+  "static/media/flatline.mp3": "/project-game-guesser-1/static/media/flatline.dc2120cc.mp3",
+  "static/media/scarylaugh2.mp3": "/project-game-guesser-1/static/media/scarylaugh2.7135cda1.mp3",
+  "static/css/main.708a12dd.chunk.css.map": "/project-game-guesser-1/static/css/main.708a12dd.chunk.css.map",
+  "index.html": "/project-game-guesser-1/index.html",
+  "precache-manifest.eb0fc4af39a997537c2fcbc87294b5ea.js": "/project-game-guesser-1/precache-manifest.eb0fc4af39a997537c2fcbc87294b5ea.js",
+  "service-worker.js": "/project-game-guesser-1/service-worker.js"
 }
